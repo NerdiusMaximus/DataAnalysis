@@ -14,6 +14,9 @@ filename = uigetfile('*.xls','Select Knee Data File');
 %import the actual excel data from the file
 disp('Importing file...');
 
+bs = strsplit(filename,'-');
+kneeName = bs{1};
+
 [ForceN,SPDisplacementmm,Rotationdeg,sheetNames] = importWorkbook(filename);
 disp('File import complete!');
 disp('Test names:');
@@ -33,7 +36,7 @@ for i = 1:1:length(sheetNames)
     name = sheetNames{i};
 
     %plot all your figures here
-    h = plotLines(ForceN(:,i), SPDisplacementmm(:,i));
+    h = plotLines(ForceN(:,i), SPDisplacementmm(:,i),kneeName,sheetNames{i});
     
     %save as png
     outFileName = strcat(name, '_', (filename(1:max(size(filename))-4)));

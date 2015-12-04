@@ -1,4 +1,4 @@
-function [h] = plotLines( ForceN, SPDisplacementmm )
+function [h] = plotLines( ForceN, SPDisplacementmm, kneeName, testname)
 %[h] = plotLines( ForceN, SPDisplacementmm )
 %   This function plots the lines on the same X axis for Force and
 %   Diplacement for the force and string pot data, and plots on right
@@ -19,7 +19,7 @@ function [h] = plotLines( ForceN, SPDisplacementmm )
     ylabel(ax3(2),'Displacement (mm)')
     xlabel(ax3(2), 'Time')
     legend('Force(N)','Displacement (mm)')
-    title(strcat('K4R52 Resect','name','AP 0 N'))%presently must be changed manually
+    title(strcat(kneeName,' ',testname))
     set(p13,'color','red')
     set(p23,'color','blue')
     set(ax3(1),'ycolor','red') 
