@@ -25,6 +25,7 @@ disp(sheetNames);
 % handle Figure directory
 if isdir('Images') == 0 
     mkdir('Images');
+    addpath('Images');
 end
 
 dir = cd;
