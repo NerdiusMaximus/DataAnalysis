@@ -19,12 +19,6 @@ disp('File import complete!');
 disp('Test names:');
 disp(sheetNames);
 
-% handle Figure directory
-if isdir('Images') == 0 
-    mkdir('Images');
-end
-
-dir = cd;
 
 %for loop to plot each data
 for i = 1:1:length(sheetNames)
@@ -38,14 +32,13 @@ for i = 1:1:length(sheetNames)
     %save as png
     outFileName = strcat(name, '_', (filename(1:max(size(filename))-4)));
     outFileName = strcat(outFileName,'.png');
-    
-    cd('./Images')
+    cd('Images');
     
     disp('File Name: ');
     disp(outFileName);
     
     print(h,'-dpng', outFileName);
-    cd('../');
+    cd('..');
 end
 
 %clear data to avoid corruption!

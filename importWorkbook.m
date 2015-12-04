@@ -65,8 +65,8 @@ J = cellfun(@(x) ischar(x), raw);
 raw(J) = {NaN};
 data = reshape([raw{:}],size(raw));
 
-disp('i = ');
-disp(i);
+disp('Importing Sheet...');
+disp(sheetName{i});
 %% Allocate imported array to column variable names
 
 for j = 1:length(data(:,1))
